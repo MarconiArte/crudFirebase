@@ -1,0 +1,42 @@
+<h1 class="text-center">Registarse</h1>
+<div [formGroup]="form" class="d-flex justify-content-center">
+    <div class="card w-25 row m-3 p-3">
+        <div class="col-12 mb-3">
+            <div class="mb-3">
+                <label class="form-label" for="nombre">Nombre</label>
+                <input class="form-control" type="text" formControlName="nombre">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label" for="apellido">Apellido</label>
+                <input class="form-control" type="text">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label" for="nombreDeUsuario">Nombre de Usuario</label>
+                <input class="form-control" type="text" formControlName="apellido">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label" for="email">Email</label>
+                <input class="form-control" type="email" formControlName="email">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label" for="">Contraseña</label>
+                <input class="form-control" type="password">
+            </div>
+
+            <div>
+                <label class="form-label" for="">Confirmar contraseña</label>
+                <input class="form-control" type="password" formControlName="contraseña">
+            </div>
+
+        </div>
+
+        <div class="text-center">
+            <button class="btn btn-danger" routerLink="/home">Cancelar</button>
+            <button class="btn btn-success ms-2" routerLink="/home">Crear Cuenta</button>
+        </div>
+    </div>
+</div>
