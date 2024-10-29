@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "crudFirebase": {
+    "task": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -61,10 +61,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "crudFirebase:build:production"
+              "buildTarget": "task:build:production"
             },
             "development": {
-              "buildTarget": "crudFirebase:build:development"
+              "buildTarget": "task:build:development"
             }
           },
           "defaultConfiguration": "development"
