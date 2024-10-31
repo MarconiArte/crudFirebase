@@ -1,6 +1,7 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import { Router, RouterLink, RouterLinkActive } from '@angular/router';
+import { LoginService } from './login.service';
 
 @Component({
     selector: 'app-home',
@@ -11,6 +12,9 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 
 export class LoginComponent implements OnInit {
     private readonly fb = inject(FormBuilder);
+    private readonly service = inject(LoginService);
+    private readonly router = inject(Router);
+
     constructor() { }
 
     protected readonly form = this.fb.group({
@@ -19,4 +23,10 @@ export class LoginComponent implements OnInit {
     });
     
     ngOnInit() { }
+
+    loginGoogle(){
+        this.service.loginWithGoogle()
+            .then(() => this.router.navigate(['/home']))
+            .catch(error => console.error('Login error', error));
+    };
 }
