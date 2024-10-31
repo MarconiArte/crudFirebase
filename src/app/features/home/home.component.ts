@@ -1,5 +1,6 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { HomeService } from './home.service';
+import { User } from '@angular/fire/auth';
 
 @Component({
     selector: 'app-home',
@@ -10,9 +11,14 @@ import { HomeService } from './home.service';
 export class HomeComponent implements OnInit {
     private readonly service = inject(HomeService);
 
+    protected user: User | null = null;
     constructor() { }
 
-    ngOnInit() { }
+    ngOnInit() { 
+        this.service.user$.subscribe(user => {
+            this.user = user;
+        });
+    }
 
     logout(){
         this.service.logout();
