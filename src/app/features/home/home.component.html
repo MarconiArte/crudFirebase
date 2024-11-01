@@ -1,3 +1,20 @@
+<p-toast />
+
+<div class="navbar p-3 shadow-sm">
+    <div class="d-flex align-items-center gap-2">
+        <p-avatar size="xlarge" [image]="user?.photoURL!" shape="circle" />
+        <span class="font-bold text-bluegray-50">
+            {{user?.displayName}}
+        </span>
+    </div>
+    <!-- <div class="p-toolbar-group-center">
+            <span class="p-input-icon-left">
+                <i class="pi pi-search"></i>
+                <input pInputText placeholder="Search" />
+            </span>
+        </div> -->
+    <div class="p-toolbar-group-end">
+        <button (click)="logout()" type="button" class="btn btn-danger">Cerrar Sesión</button>
+    </div>
+</div>
 <h1>Bienvenido al home</h1>
-<p>{{user?.displayName}}</p>
-<button (click)="logout()" type="button" class="btn btn-danger">Cerrar Sesión</button>
