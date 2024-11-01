@@ -16,8 +16,6 @@ export class HomeService {
     logout(){
         return signOut(this.auth)
             .then(() => {
-                console.log('deslogueado con exito');
-
                 return this.router.navigate(['/login']);
             })
             .catch(error => console.error(error));

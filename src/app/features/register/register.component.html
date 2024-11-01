@@ -1,20 +1,11 @@
-<h1 class="text-center">Registarse</h1>
+<p-toast />
 <div [formGroup]="form" class="d-flex justify-content-center">
     <div class="card w-25 row m-3 p-3">
+        <h2 class="text-center">Registrarse</h2>
         <div class="col-12 mb-3">
             <div class="mb-3">
-                <label class="form-label" for="nombre">Nombre</label>
-                <input class="form-control" type="text" formControlName="nombre">
-            </div>
-
-            <div class="mb-3">
-                <label class="form-label" for="apellido">Apellido</label>
-                <input class="form-control" type="text">
-            </div>
-
-            <div class="mb-3">
-                <label class="form-label" for="nombreDeUsuario">Nombre de Usuario</label>
-                <input class="form-control" type="text" formControlName="apellido">
+                <label class="form-label" for="nombreUsuario">Nombre de Usuario</label>
+                <input class="form-control" type="text" formControlName="nombreUsuario">
             </div>
 
             <div class="mb-3">
@@ -24,19 +15,19 @@
 
             <div class="mb-3">
                 <label class="form-label" for="">Contraseña</label>
-                <input class="form-control" type="password">
+                <input class="form-control" type="password" formControlName="contraseña">
             </div>
 
             <div>
                 <label class="form-label" for="">Confirmar contraseña</label>
-                <input class="form-control" type="password" formControlName="contraseña">
+                <input class="form-control" type="password" >
             </div>
 
         </div>
 
         <div class="text-center">
-            <button class="btn btn-danger" routerLink="/home">Cancelar</button>
-            <button class="btn btn-success ms-2" routerLink="/home">Crear Cuenta</button>
+            <button type="button" class="btn btn-danger" routerLink="/home">Cancelar</button>
+            <button (click)="registarse()" class="btn btn-success ms-2">Crear Cuenta</button>
         </div>
     </div>
 </div>

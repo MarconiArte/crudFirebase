@@ -1,8 +1,15 @@
 import { Injectable } from '@angular/core';
-import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { Auth, createUserWithEmailAndPassword, updateProfile } from '@angular/fire/auth';
 
-@Injectable({providedIn: 'root'})
+@Injectable({ providedIn: 'root' })
 export class RegisterService {
-    constructor(private auth: AngularFireAuth) { }
+    constructor(private auth: Auth) { }
+
+    registrarse(email: string, contraseña: string, nombreUsuario: string) {
+        return createUserWithEmailAndPassword(this.auth, email, contraseña)
+            .then(userCredential => {
+                return updateProfile(userCredential.user, { displayName: nombreUsuario });
+            });
+    }
 
 }
