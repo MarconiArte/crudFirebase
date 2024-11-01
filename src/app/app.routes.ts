@@ -4,7 +4,7 @@ import { HomeComponent } from './features/home/home.component';
 import { RegisterComponent } from './features/register/register.component';
 
 export const routes: Routes = [
-    { path: '', pathMatch: 'full', redirectTo: '/home' },
+    { path: '', pathMatch: 'full', redirectTo: '/login' },
     { path: 'home', component: HomeComponent },
     { path: 'login', component: LoginComponent },
     { path: 'register', component: RegisterComponent },

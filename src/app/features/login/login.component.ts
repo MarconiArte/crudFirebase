@@ -1,16 +1,20 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
 import { LoginService } from './login.service';
 import {ToastModule} from 'primeng/toast'
 import { MessageService } from 'primeng/api';
+import { TooltipModule } from 'primeng/tooltip';
+import { ChipModule } from 'primeng/chip';
+import { FloatLabelModule } from 'primeng/floatlabel';
+import { InputTextModule } from 'primeng/inputtext';
 
 @Component({
     selector: 'app-home',
     templateUrl: 'login.component.html',
     standalone: true,
-    imports:[RouterLink, RouterLinkActive, ReactiveFormsModule,ToastModule, ButtonModule ],
+    imports:[FormsModule, RouterLink, RouterLinkActive, ReactiveFormsModule,ToastModule, ButtonModule ,TooltipModule,ChipModule, InputTextModule, FloatLabelModule],
     providers: [MessageService]
 })
 
@@ -22,7 +26,7 @@ export class LoginComponent implements OnInit {
     constructor(private messageService: MessageService) { }
 
     protected readonly form = this.fb.group({
-        nombreUsuario: [],
+        email: [],
         contraseña:[],
     });
     
