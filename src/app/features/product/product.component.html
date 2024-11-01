@@ -1,0 +1,24 @@
+<div class="d-flex justify-content-center">
+    <div class="card p-3" style="width: 32rem;" [formGroup]="form">
+        <div>
+            <label class="form-label" for="nombre">Ingrese nombre</label>
+            <input class="form-control" type="text" formControlName="nombre">  
+        </div>
+        <div>
+            <label class="form-label" for="codigo">Ingrese codigo</label>
+            <input class="form-control" type="text" formControlName="codigo">  
+        </div>
+        <div>
+            <label class="form-label" for="precio">Ingrese precio</label>
+            <input class="form-control" type="number" formControlName="precio">  
+        </div>
+        <div>
+            <label class="form-label" for="nota">Ingrese nota</label>
+            <textarea class="form-control" formControlName="nota"></textarea>  
+        </div>
+
+        <div class="mt-3">
+            <button class="btn btn-success">Cargar producto</button>
+        </div>
+    </div>
+</div>

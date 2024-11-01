@@ -9,12 +9,13 @@ import { MessageService } from 'primeng/api';
 import { AvatarModule } from 'primeng/avatar';
 import { Router } from '@angular/router';
 import { ToastModule } from 'primeng/toast';
+import { ProductComponent } from '../product/product.component';
 
 @Component({
     selector: 'app-home',
     templateUrl: 'home.component.html',
     standalone: true,
-    imports: [ToolbarModule, ButtonModule, SplitButtonModule, InputTextModule, AvatarModule, ToastModule],
+    imports: [ProductComponent,ToolbarModule, ButtonModule, SplitButtonModule, InputTextModule, AvatarModule, ToastModule],
     providers: [MessageService]
 })
 
